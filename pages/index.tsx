@@ -208,9 +208,26 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
                 className="relative mb-5 cursor-pointer rounded-lg overflow-hidden shadow-md group"
                 onClick={() => img.folderName && loadEnigma(img.folderName)}
               >
-                <div className="absolute top-0 left-0 right-0 bg-black/60 text-white text-center py-2 text-lg font-semibold z-10">
-                  {img.folderName}
-                </div>
+<div className="absolute top-0 left-0 right-0 bg-black/60 text-white py-2 px-3 z-10">
+  <div className="relative">
+
+    {/* Top-right indicators */}
+    <div className="absolute top-0 right-0 flex gap-2 whitespace-nowrap text-sm font-semibold">
+      {typeof img.difficulty === "number" && (
+        <span className="text-yellow-300">🌶️ {img.difficulty.toFixed(1)}</span>
+      )}
+      {typeof img.difficulty === "number" && (
+        <span className="text-blue-300">💻 {img.computer.toFixed(1)}</span>
+      )}
+    </div>
+
+    {/* Title with padding to avoid overlap */}
+    <div className="pr-28 text-lg font-semibold leading-tight line-clamp-2">
+      {img.folderName}
+    </div>
+
+  </div>
+</div>
                 <div className="absolute bottom-0 left-0 right-0 p-1 flex flex-wrap gap-1 bg-black/40 text-white text-xs z-10">
                   {img.tags?.map((tag) => (
                     <span key={tag} className="px-2 py-0.5 bg-white/20 rounded-full backdrop-blur-sm">
