@@ -6,6 +6,8 @@ export interface ImageProps {
   height: number;
   blurDataUrl?: string;
   folderName?: string;
+  computer?: number; 
+  difficulty?: number;
   tags?: string[];
 }
 
