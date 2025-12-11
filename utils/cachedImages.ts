@@ -32,19 +32,37 @@ export default async function getResults(): Promise<ImageProps[]> {
     // ---------------------------
     const tagsFile = path.join(folderPath, "tags.txt");
     let tags: string[] = [];
+    let computer = 0;
+    let difficulty = 0;
 
-    if (fs.existsSync(tagsFile)) {
-      try {
-        const raw = fs.readFileSync(tagsFile, "utf8");
+if (fs.existsSync(tagsFile)) {
+  try {
+    const raw = fs.readFileSync(tagsFile, "utf8");
 
-        tags = raw
-          .split(/[\n,]/) // split newline OR comma
-          .map((t) => t.trim())
-          .filter((t) => t.length > 0);
-      } catch (err) {
-        console.error(`Cannot read tags.txt in "${folder}"`, err);
-      }
+    // Split by newline OR comma
+    const parts = raw
+      .split(/[\n,]/)
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0);
+
+    // First element → computer
+    if (parts.length >= 1) {
+      const n = Number(parts[0]);
+      if (!isNaN(n)) computer = n;
     }
+
+    // Second element → difficulty
+    if (parts.length >= 2) {
+      const n = Number(parts[1]);
+      if (!isNaN(n)) difficulty = n;
+    }
+
+    // Remaining elements → tags
+    tags = parts.slice(2);
+  } catch (err) {
+    console.error(`Cannot read tags.txt in "${folder}"`, err);
+  }
+}
 
     return {
       id: idx + 1,
