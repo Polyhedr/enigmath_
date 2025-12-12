@@ -105,6 +105,8 @@ def convert2md(t):
     t = t.replace(r'\(', '$').replace(r'\)', '$')
     t = t.replace(r'\og ', '"').replace(r' \fg{}', '"')
     t = t.replace(r'---', '—')
+    bp()
+    t = re.compile(r'(?<!\n)\n(?!\n|\\item)').sub(' ', t)
     t = latex_itemize_to_md(t)
     return t
 
