@@ -1,4 +1,4 @@
-1.8
-1.5
+2.3
+3.3
 probabilité
 théorie des jeux

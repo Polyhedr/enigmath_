@@ -85,30 +85,24 @@ def main():
         hotpep_counts = [count_emoji_in_item(it, 'hot-pepper') for it in question_items]
         laptop_counts = [count_emoji_in_item(it, 'laptop') for it in question_items]
 
-        total_hotpep = sum(hotpep_counts)
-        total_laptop = sum(laptop_counts)
-
-        mean_hotpep = total_hotpep / n_questions
-        mean_laptop = total_laptop / n_questions
-
-        mean_hotpep_str = format_number(mean_hotpep)
-        mean_laptop_str = format_number(mean_laptop)
-
         # tags
         tags = extract_tags(tex)
 
         # output file
         out_path = tex_path.parent / "tags.txt"
 
+        total_hotpep = max(hotpep_counts)
+        total_laptop = max(laptop_counts)
+
         out_lines = []
-        out_lines.append(mean_hotpep_str)
-        out_lines.append(mean_laptop_str)
+        out_lines.append(format_number(total_hotpep))
+        out_lines.append(format_number(total_laptop))
         out_lines.extend(tags)
 
         out_path.write_text("\n".join(out_lines) + "\n", encoding='utf-8')
 
         print(f"Wrote {out_path}  (questions={n_questions}, "
-              f"laptop={total_laptop}, hotpep={total_hotpep})")
+              f"hotpep={total_hotpep}, laptop={total_laptop})")
 
 
 if __name__ == '__main__':

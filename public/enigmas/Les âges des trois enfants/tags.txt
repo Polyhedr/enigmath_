@@ -1,4 +1,4 @@
-1.4
-0.4
+1.9
+1.6
 logique épistémique
 arithmétique
