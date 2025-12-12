@@ -50,6 +50,7 @@ def latex_itemize_to_md(text: str) -> str:
 
     def convert_block(block: str, indent_level: int = 0) -> str:
         lines = block.strip().split("\n")
+        bp()
         md = []
         indent = "   " * indent_level
 
