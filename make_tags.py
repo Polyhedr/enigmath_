@@ -86,8 +86,8 @@ def main():
         mean_laptop = total_laptop / n_questions
         mean_hotpep = total_hotpep / n_questions
 
-        mean_laptop_str = format_number(mean_laptop * 5)
-        mean_hotpep_str = format_number(mean_hotpep * 5 / 3)
+        mean_laptop_str = format_number(mean_laptop)
+        mean_hotpep_str = format_number(mean_hotpep)
 
         # tags
         tags = extract_tags(tex)

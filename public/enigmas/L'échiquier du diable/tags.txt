@@ -1,2 +1,5 @@
 0
-1.2
+0.8
+informatique
+logique
+graphe
