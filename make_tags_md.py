@@ -5,7 +5,7 @@ left_embrace = "{"
 right_embrace = "}"
 OK = [
 "L'échiquier du diable",
-#"La part du trésor",
+"La part du trésor",
 ]
 
 def extract_tags(tex):
@@ -50,9 +50,8 @@ def latex_itemize_to_md(text: str) -> str:
 
     def convert_block(block: str, indent_level: int = 0) -> str:
         lines = block.strip().split("\n")
-        bp()
         md = []
-        indent = "   " * indent_level
+        indent = "\n    " * indent_level
 
         nested_content = []
 
@@ -77,7 +76,7 @@ def latex_itemize_to_md(text: str) -> str:
             # Detect items
             if "\\item" in line:
                 content = re.sub(r"\\item\s*", "", line).strip()
-                md.append(f"{indent}- {content}  ")
+                md.append(f"{indent}- {content}")
             else:
                 # Continuation of previous item (rare)
                 stripped = line.strip()
