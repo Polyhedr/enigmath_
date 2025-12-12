@@ -15,10 +15,11 @@ Une horde de 12 pirates doit se partager un trésor de 100 pièces d'or qu'ils v
 
 
 3. 🌶️${}^{2.3}$  Avec $N$ pirates et $G$ pièces d'or, tels que $N > 2G$, déterminez :
-    - quels pirates survivront,  
-- quels pirates recevront des pièces d'or,  
-- quels pirates ne recevront rien.  
-    Proposez une répartition possible des $G$ pièces d'or parmi les pirates survivants.
+   - Quels pirates survivront  
+   - Quels pirates recevront des pièces d'or  
+   - Quels pirates ne recevront rien  
+   
+   Proposez une répartition possible des $G$ pièces d'or parmi les pirates survivants.
 
 
 &nbsp;

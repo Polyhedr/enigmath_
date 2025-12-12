@@ -5,7 +5,6 @@ left_embrace = "{"
 right_embrace = "}"
 OK = [
 "L'échiquier du diable",
-"La part du trésor",
 ]
 
 def extract_tags(tex):
