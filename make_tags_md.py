@@ -117,7 +117,7 @@ def convert2md(t):
     t = t.replace('\n\\medskip\n\\textbf', '')
     t = t.replace("*{Énoncé}\n", "## Énoncé\n\n")
     t = t.replace(r'\(', '$').replace(r'\)', '$')
-    t = t.replace(r'\[', '\n\n$$\n').replace(r'\]', '\n\n$$\n')
+    t = t.replace(r'\[', '\n\n$$').replace(r'\]', '$$\n\n')
     t = t.replace(r'\og ', '"').replace(r' \fg{}', '"')
     t = t.replace(r'---', '—')
     t = t.replace(r'~', '')
