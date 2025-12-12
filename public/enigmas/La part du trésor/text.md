@@ -21,6 +21,7 @@ Une horde de 12 pirates doit se partager un trésor de 100 pièces d'or qu'ils v
    - quels pirates recevront des pièces d'or,
 
    - quels pirates ne recevront rien.
+
 Proposez une répartition possible des $G$ pièces d'or parmi les pirates survivants. 
 
 &nbsp;

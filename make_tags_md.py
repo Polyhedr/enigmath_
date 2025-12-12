@@ -7,6 +7,7 @@ OK = [
 "L'échiquier du diable",
 "La part du trésor",
 "La prison circulaire de taille inconnue",
+"Le défi des trois dés",
 ]
 
 def extract_tags(tex):
@@ -49,7 +50,7 @@ def unwrap_newlines_latex(text: str) -> str:
     pattern = re.compile(r'(?<!\n)\n(?!\n|\s*\\item|' + placeholder_end + r')')
     text = pattern.sub(' ', text)
 
-    text = text.replace(placeholder_end, '\n')
+    text = text.replace(placeholder_end, '\n\n')
 
     return text
 
@@ -115,6 +116,7 @@ def convert2md(t):
     t = t.replace(r'\(', '$').replace(r'\)', '$')
     t = t.replace(r'\og ', '"').replace(r' \fg{}', '"')
     t = t.replace(r'---', '—')
+    t = t.replace(r'~', '')
     t = re.sub(r'^[ \t]+', '', t, flags=re.MULTILINE)
     t = unwrap_newlines_latex(t)
     t = latex_itemize_to_md(t)
