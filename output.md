@@ -1,29 +1,37 @@
 ## Énoncé
 
-Vous avez été enfermés dans une prison formant un anneau parfait de $n$ cellules (vous ne connaissez pas $n$), toutes identiques, isolées, et chacune contenant exactement un prisonnier.
-Dans chaque cellule se trouvent un interrupteur et une ampoule, mais le câblage a été manifestement conçu par un ingénieur fou.
-Si, à midi pile, l’interrupteur d'une cellule est en position "on", alors l’ampoule de la cellule voisine (dans le sens horaire) émet un bref flash. Sinon, la lampe reste éteinte.
+Considérons un jeu auquel participent $K$ joueurs. Chaque joueur reçoit trois dés à six faces. Chacun lance simultanément ses trois dés et obtient un score,
+    défini comme la somme des trois résultats. Après ce premier lancer, chaque joueur doit décider :
+    
+   - soit de conserver ce score et d'arrêter son tour,
 
-Afin d’empêcher toute forme de communication, chaque nuit à minuit, le gardien diffuse du gaz anesthésiant dans tout l’anneau, remet tous les interrupteurs sur "off", et réarrange les prisonniers comme bon lui semble. Mais il garde une règle immuable : une personne par cellule.
+   - soit de relancer les trois dés pour tenter d'obtenir
 
-Un jour, le gardien entre dans votre cellule et vous lance un défi. Pour gagner votre liberté --- et celle de tous les autres --- une seule règle :
-à n’importe quel moment, n’importe quel prisonnier peut crier "Nous sommes $n$ prisonniers !"
-S’il dit vrai : tout le monde est libre.
-S’il se trompe : tout le monde est exécuté.
-
-Le gardien vous autorise à envoyer un unique message écrit à tous les autres prisonniers, dans lequel vous pouvez expliquer les règles et proposer un plan. Eux n’ont pas le droit de répondre.
-Naturellement, le gardien lira soigneusement votre note... et ensuite, il mélangera les prisonniers autant que nécessaire pour tenter de faire échouer votre stratégie.
+     un meilleur score.
+    Si un joueur choisit de relancer, il perd irréversiblement son score précédent,
+même si celui-ci était plus élevé. Chaque joueur peut relancer au maximum deux fois, 
+c'est-à-dire qu'il effectue entre un et trois lancers au total. 
+Les scores intermédiaires sont gardés secrets jusqu'à la fin de la partie. Lorsque tous les joueurs ont terminé, les scores sont révélés. 
+Le joueur qui possède le plus petit score est déclaré perdant. 
+En cas d'égalité pour le plus faible score, le perdant est choisi au hasard 
+parmi les ex~æquo.
 
 
 **Questions :**
 
-1. 🌶️${}^{2.2}$  On admet que les prisonniers peuvent lancer des pièces, ce qui leur permet de prendre des décisions aléatoires que le gardien ne peut pas prévoir, même s’il connaît leur stratégie. Décrivez une stratégie permettant aux prisonniers de déterminer $n$ (presque sûrement).
+1. 🌶️${}^{2.1}$💻${}^{2.9}$  Déterminez, en fonction de $K$, un profil de stratégies pures 
+(c’est-à-dire non aléatoires) tel que chaque joueur adopte 
+sa meilleure réponse compte tenu des choix des autres joueurs.
 
 
-2. 🌶️${}^{2.9}$  Donnez une solution qui n’utilise aucune forme d’aléatoire et qui garantit d’aboutir en un nombre déterminé de jours.
+2. 🌶️${}^{2.2}$  On considère un joueur isolé face à une coalition composée des $K-1$ autres joueurs, et on s’intéresse aux stratégies mixtes (le coup joué est sélectionné au hasard selon une certaine distribution de probabilité). Montrez que, sans perte de généralité, le problème peut se ramener à un jeu à somme nulle de taille $120\times120$ entre deux joueurs (le joueur isolé versus la coalition).
 
 
-3. 🌶️${}^{3.0}$  On suppose que la prison n’est plus circulaire, mais forme un graphe orienté fortement connexe, chaque cellule contenant au moins un interrupteur et une lumière, et chaque lumière étant contrôlée par exactement un interrupteur situé dans une autre cellule. Décrivez une stratégie permettant aux prisonniers de déterminer $n$.
+3. 🌶️${}^{2.3}$  En généralisant à $\ell+1$ lancers, montrez qu'un joueur isolé face à une coalition composée des $K-1$ autres joueurs peut se ramener à un jeu à somme nulle 
+de dimension $\binom{14 + \ell}{\ell} \times \binom{14 + \ell}{\ell}$ entre deux joueurs.
+
+
+4. 🌶️${}^{1.1}$💻${}^{3.3}$  On considère de nouveau le cas du jeu en concurrence pure (sans coalition). On suppose qu’après chaque relance, tous les joueurs observent le nombre $L$ de joueurs encore en jeu (n’ayant pas arrêté). Pour trois lancers et pour tout $K\le 100$, déterminez un profil de stratégies pures tel que chaque joueur adopte sa meilleure réponse compte tenu des décisions des autres.
 
 
 &nbsp;
