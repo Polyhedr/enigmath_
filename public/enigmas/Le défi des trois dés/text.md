@@ -1,8 +1,11 @@
 ## Énoncé
 
-Considérons un jeu auquel participent $K$ joueurs. Chaque joueur reçoit **trois dés à six faces**. Chacun lance simultanément ses trois dés et obtient un **score**, défini comme la somme des trois résultats. Après ce premier lancer, chaque joueur doit décider :  
-- soit de **conserver** ce score et d'arrêter son tour,  
-- soit de **relancer les trois dés** pour tenter d'obtenir un meilleur score.  
+Considérons un jeu auquel participent $K$ joueurs. Chaque joueur reçoit **trois dés à six faces**. Chacun lance simultanément ses trois dés et obtient un **score**, 
+    défini comme la somme des trois résultats. Après ce premier lancer, chaque joueur doit décider :  
+
+   - soit de **conserver** ce score et d'arrêter son tour, 
+
+   - soit de **relancer les trois dés** pour tenter d'obtenir un meilleur score.  
 
 Si un joueur choisit de relancer, il **perd irréversiblement** son score précédent, même si celui-ci était plus élevé. Chaque joueur peut relancer au maximum **deux fois**, c'est-à-dire qu'il effectue entre **un et trois lancers au total**.  
 
