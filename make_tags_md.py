@@ -155,6 +155,8 @@ def main():
 
         # create the .md
         text = re.sub(r'\\item\s+\\indicators', r'\\item\\indicators', text)
+        text = re.sub(fr'\begin{left_embrace }description{right_embrace}', fr'\begin{left_embrace }itemize{right_embrace}', text)
+        text = re.sub(fr'\end{left_embrace }description{right_embrace}', fr'\end{left_embrace }itemize{right_embrace}', text)
         S,Q = text.split("{Questions}")
         out = convert2md(S)
         out += '\n\n**Questions :**\n\n'
