@@ -1,2 +1,2 @@
-logique épistémique
-arithmétique
+0.8
+0
