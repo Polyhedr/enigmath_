@@ -117,13 +117,16 @@ def convert2md(t):
     t = t.replace('\n\\medskip\n\\textbf', '')
     t = t.replace("*{Énoncé}\n", "## Énoncé\n\n")
     t = t.replace(r'\(', '$').replace(r'\)', '$')
-    t = t.replace(r'\[', '\n\n$$').replace(r'\]', '$$\n\n')
+    t = re.compile(r'\$\$(.+?)\$\$', re.DOTALL).sub(r'$$\\begin{equation*}\1\\end{equation*}$$', t)
+    t = t.replace(r'\[', f'$$\\begin{left_embrace}equation*{right_embrace}').replace(r'\]', f'\\end{left_embrace}equation*{right_embrace}$$')
     t = t.replace(r'\og ', '"').replace(r' \fg{}', '"')
     t = t.replace(r'---', '—')
     t = t.replace(r'~', '')
     t = re.sub(r'^[ \t]+', '', t, flags=re.MULTILINE)
     t = unwrap_newlines_latex(t)
     t = latex_itemize_to_md(t)
+    t = re.sub(r'\$\$\\begin\{equation\*\}',r"\n$$\n\\begin{equation*}\n",t)
+    t = re.sub(r'\\end\{equation\*\}\$\$',r"\n\\end\{equation\*\}\n$$\n",t)
     return t
 
 def process_indicators(q):
@@ -157,12 +160,10 @@ def main():
 
         # create the .md
         text = re.sub(r'\\item\s+\\indicators', r'\\item\\indicators', text)
-
         text = re.sub(fr'\\begin{left_embrace}description{right_embrace}', fr'\\begin{left_embrace}itemize{right_embrace}', text)
-        text = re.sub(fr'\\begin{left_embrace}align*{right_embrace}', fr'$$\n\\begin{left_embrace}align*{right_embrace}\n', text)
+        text = re.sub(fr'\\begin{left_embrace}align*{right_embrace}', fr'$$\\begin{left_embrace}align*{right_embrace}', text)
         text = re.sub(fr'\\end{left_embrace}description{right_embrace}', fr'\\end{left_embrace}itemize{right_embrace}', text)
-        text = re.sub(fr'\\end{left_embrace}align*{right_embrace}', fr'\n\\end{left_embrace}align*{right_embrace}\n$$', text)
-
+        text = re.sub(fr'\\end{left_embrace}align*{right_embrace}', fr'\\end{left_embrace}align*{right_embrace}$$', text)
         S,Q = text.split("{Questions}")
         out = convert2md(S)
         out += '\n\n**Questions :**\n\n'
