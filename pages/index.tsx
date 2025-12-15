@@ -17,6 +17,8 @@ interface EnigmaData {
   text: string;
   folderName: string;
   title: string;
+  difficulty: number | null;
+  computer: number | null;
 }
 
 const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
