@@ -11,8 +11,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import path from "path";
-import fs from "fs/promises";
 
 interface EnigmaData {
   src: string;
@@ -102,14 +100,46 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           ? srcJpg
           : srcPng;
 
-      // find preloaded image data
-      const preloaded = images.find(img => img.folderName === folderName);
+      /* ---------- tags.txt ---------- */
+      let title: string | undefined;
+      let difficulty = 0;
+      let computer = 0;
+
+      try {
+        const tagsResponse = await fetch(`${basePath}/tags.txt`);
+        if (tagsResponse.ok) {
+          const raw = await tagsResponse.text();
+
+          const parts = raw
+            .split(/[\n,]/)
+            .map((t) => t.trim())
+            .filter((t) => t.length > 0);
+
+          if (parts.length >= 1) {
+            const n = Number(parts[0]);
+            if (!isNaN(n)) difficulty = n;
+          }
+
+          if (parts.length >= 2) {
+            const n = Number(parts[1]);
+            if (!isNaN(n)) computer = n;
+          }
+
+          if (parts.length >= 3) {
+            title = parts[2];
+          }
+        }
+      } catch (err) {
+        console.warn(`Failed to load tags.txt for ${folderName}`, err);
+      }
 
       setActiveEnigma({
         src,
         text,
         folderName,
-        title: preloaded?.title || folderName,
+        title,
+        difficulty,
+        computer,
       });
 
       window.history.pushState({ enigma: folderName }, "", `#${encodeURIComponent(folderName)}`);
@@ -395,45 +425,16 @@ export async function getStaticProps() {
   const localImages = await getResults();
 
   const images: ImageProps[] = await Promise.all(
-    localImages.map(async (img) => {
-      let title = img.folderName;
-      let difficulty: number | undefined;
-      let computer: number | undefined;
-      let tags: string[] = [];
-
-      try {
-        const tagsPath =
-          img.folderName === "Introduction"
-            ? path.join(process.cwd(), "public", "Introduction", "tags.txt")
-            : path.join(process.cwd(), "public", "enigmas", img.folderName, "tags.txt");
-
-        const raw = await fs.readFile(tagsPath, "utf-8");
-
-        const parts = raw
-          .split(/[\n,]/)
-          .map(t => t.trim())
-          .filter(Boolean);
-
-        difficulty = Number(parts[0]) || undefined;
-        computer = Number(parts[1]) || undefined;
-        title = parts[2] || img.folderName;
-        tags = parts.slice(3);
-      } catch {
-        console.warn(`No tags.txt for ${img.folderName}`);
-      }
-
-      return {
-        ...img,
-        title,
-        difficulty,
-        computer,
-        tags,
-        blurDataUrl: await getBase64ImageUrl(img),
-      };
-    })
+    localImages.map(async (img) => ({
+      ...img,
+      folderName: img.folderName,
+      title: img.title,
+      tags: img.tags ?? [],
+      difficulty: img.difficulty ?? 0,
+      computer: img.computer ?? 0,
+      blurDataUrl: await getBase64ImageUrl(img),
+    }))
   );
 
   return { props: { images } };
 }
-
-
