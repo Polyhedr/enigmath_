@@ -290,7 +290,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 </div>
 
     {/* Title with padding to avoid overlap */}
-    <div className="pr-28 text-lg font-semibold leading-tight line-clamp-2">
+    <div className="pr-24 text-lg font-semibold leading-tight line-clamp-2">
       {img.title}
     </div>
 
