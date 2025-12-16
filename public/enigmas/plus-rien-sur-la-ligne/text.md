@@ -34,7 +34,7 @@ où $k \in \mathbb{N},$ $a_0, \dots, a_k,a'_0, \dots, a'_k \in \mathbb{N}$ et $(
 3. 🌶️${}^{\color{red}0.7}$ Avec les deux actions
     $$
     \begin{align*}
-    A\triangleq(1,0,0,0) \longleftrightarrow (0,1,1,1) \quad \text{et} \quad B\triangleq(0,0) \longleftrightarrow (1,1),
+    & A\triangleq(1,0,0,0) \longleftrightarrow (0,1,1,1) \\& \text{et} \\& B\triangleq(0,0) \longleftrightarrow (1,1),
     \end{align*}
     $$
     le jeu est-il résoluble&nbsp;? 
@@ -42,7 +42,7 @@ où $k \in \mathbb{N},$ $a_0, \dots, a_k,a'_0, \dots, a'_k \in \mathbb{N}$ et $(
 4. 🌶️${}^{\color{red}1.0}$ Avec les deux actions
     $$
     \begin{align*}
-    A\triangleq(1,0,0,0,0,0) \longleftrightarrow (0,1,1,1,1,1) \quad \text{et} \quad B\triangleq(0,0,0) \longleftrightarrow (1,1,1),
+    & A\triangleq(1,0,0,0,0,0) \longleftrightarrow (0,1,1,1,1,1) \\& \text{et} \\& B\triangleq(0,0,0) \longleftrightarrow (1,1,1),
     \end{align*}
     $$
     le jeu est-il résoluble&nbsp;? 
@@ -125,7 +125,7 @@ On définie une action $A$ par
 11. 🌶️${}^{\color{red}1.4}$ Avec les deux actions (de taille non nécessairement égale)
     $$
     \begin{align*}
-    & A \triangleq 
+    A \triangleq 
     \begin{bmatrix}
     0 & 0 &\cdots & 0 \\
     1 & 0 &\cdots & 0
@@ -135,7 +135,7 @@ On définie une action $A$ par
     1 & 1 &\cdots & 1 \\
     0 & 0 &\cdots & 0
     \end{bmatrix}
-    \\& \text{et} \\& 
+    \qquad \text{et} \qquad 
     B \triangleq  \begin{bmatrix}
     0 &\cdots & 0
     \end{bmatrix}
