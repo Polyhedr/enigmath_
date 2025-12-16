@@ -252,14 +252,35 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           </div>
 
           {/* Search */}
-          <input
-            type="text"
-            placeholder="Rechercher..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded h-12"
-          />
-        </div>
+<div className="mb-4 flex items-center gap-3">
+  <input
+    type="text"
+    placeholder="Rechercher..."
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    className="w-full p-2 border border-gray-300 rounded h-12"
+  />
+
+  <label className="flex items-center gap-1">
+    <input
+      type="checkbox"
+      checked={sortByDifficulty}
+      onChange={(e) => setSortByDifficulty(e.target.checked)}
+      className="h-5 w-5"
+    />
+    Trier par difficulté
+  </label>
+
+  <label className="flex items-center gap-1">
+    <input
+      type="checkbox"
+      checked={sortByComputer}
+      onChange={(e) => setSortByComputer(e.target.checked)}
+      className="h-5 w-5"
+    />
+    Trier par compute
+  </label>
+</div>
 
         {/* ---------------- Gallery ---------------- */}
         <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]">
@@ -382,7 +403,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
                 )}&body=${
                   activeEnigma.folderName === "Introduction"
                     ? "Merci d'inclure votre .zip en pièce jointe de ce mail."
-                    : "Pour soumettre une question, merci de suivre la même procédure que pour soumettre une nouvelle énigme, en incluant uniquement une question et sa réponse dans le fichier .tex.%0A%0APour soumettre une réponse, merci de suivre la même procédure, mais en incluant uniquement la réponse dans le .tex.%0A%0ADans les deux cas, votre soumission sera évaluée et, si elle est recevable, incorporée à la solution actuelle (comme alternative dans le cas d’une soumission de question)."
+                    : "Pour soumettre une question, veuillez suivre la même procédure que pour une nouvelle énigme, en incluant uniquement la question et sa réponse dans le fichier .tex (pas d'énoncé).%0A%0APour soumettre une réponse, ajoutez [X] en préfixe de l’objet du mail, où X correspond au numéro de la question, et suivez la même procédure, en incluant uniquement la réponse dans le fichier .tex (pas d'énoncé et 0 question).%0A%0ADans les deux cas, votre soumission sera évaluée et, si elle est recevable, incorporée à l'énigme actuelle (comme solution alternative dans le cas d’une soumission de réponse)."
                 }`}
                 className="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-2xl"
                 title={
