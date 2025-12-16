@@ -21,8 +21,3 @@ Le but pour Alice est de manger le plus de pizza possible.
 
 5. 🌶️${}^{\color{red}4.4}$ Montrez qu’Alice peut manger au moins $\frac{4}{9}$ de la pizza.
 
-
-
-&nbsp;
-
----

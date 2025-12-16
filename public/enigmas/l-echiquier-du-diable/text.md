@@ -22,8 +22,3 @@ Aucun contact n'est autorisé entre Alice et Bob une fois le défi commencé. Al
 
 4. 🌶️${}^{\color{red}1.5}$ Si Alice est contrainte de modifier deux cases (éventuellement la même case, ce qui revient à ne rien faire), trouvez une stratégie qu’Alice et Bob peuvent mettre en place pour être sûrs de trouver la case mystère, quel que soit le nombre $ n \geq 2 $ de cases.
 
-
-
-&nbsp;
-
----

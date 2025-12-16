@@ -14,8 +14,3 @@ Vous disposez d'un certain nombre de boules identiques à vu d'oeil, et toutes d
 
 3. 🌶️${}^{\color{red}3.4}$ Généralisation&nbsp;: En notant $P$ le nombre de pesées autorisées, exprimer en fonction de $P$ le nombre maximal $N$ de boules tel qu'il existe une stratégie permettant de determiner l'intrus parmis $N$ boules en au plus $P$ pesées (on ne sait pas si l'intrus est plus léger ou plus lourd).
 
-
-
-&nbsp;
-
----

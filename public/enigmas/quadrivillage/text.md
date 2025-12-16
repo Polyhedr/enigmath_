@@ -25,8 +25,3 @@ bâtir leur Grande Allée selon le même objectif. Cependant, selon la tradition
 de chaque Grande Allée. Si l'on considère $d$ villages et $n$ habitants par village, décrivez un algorithme  
 de complexité $\mathcal O(dn^2\log(dn))$ permettant de résoudre ce problème de minimisation. 
 
-
-
-&nbsp;
-
----

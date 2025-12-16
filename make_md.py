@@ -209,7 +209,6 @@ class MD:
                     t,
                     count=1
                 )
-        # last dash line encore utile ?
         return t
     
     def build(self):
@@ -218,7 +217,7 @@ class MD:
         out += '\n\n**Questions :**\n\n'
         for e, q in enumerate(self.structured_text["questions"]):
             out += f"{e+1}. {q['indicators']} {self.process(q['text'], 4)}\n\n"
-        out += "\n\n&nbsp;\n\n---"
+        # out += "\n\n&nbsp;\n\n---"
         self.out = out
     
     def split(self, t):

@@ -17,8 +17,3 @@ On choisit deux nombres différents, strictement supérieurs à 1, dont la somme
 
 2. 🌶️${}^{\color{red}2.5}$💻${}^{\color{blue}2.7}$ Quel est le plus grand entier, tel que si l'on remplace dans l'enoncé précédent 100 par cet entier, il soit toujours possible de trouver les deux inconnues, après avoir assisté à la conversation ci-dessus&nbsp;?
 
-
-
-&nbsp;
-
----

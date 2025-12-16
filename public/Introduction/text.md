@@ -29,7 +29,3 @@ Si vous utilisez Enigmath dans vos travaux de recherche, merci de citer le proje
   url          = {https://enigmath.vercel.app}
 }
 ```
-
-&nbsp;
-
----

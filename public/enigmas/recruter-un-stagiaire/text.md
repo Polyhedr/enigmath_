@@ -20,8 +20,3 @@ Montrer que l’entreprise peut adopter une stratégie telle que le score moyen 
 
 3. 🌶️${}^{\color{red}2.2}$ Supposons que l’entreprise ait désormais la possibilité de réorganiser librement l’ordre des entretiens dans la liste de passage avant qu’ils ne commencent. En appliquant ensuite la stratégie optimale, quel ordre doit-elle choisir pour maximiser le score moyen de l’étudiant recruté&nbsp;?
 
-
-
-&nbsp;
-
----

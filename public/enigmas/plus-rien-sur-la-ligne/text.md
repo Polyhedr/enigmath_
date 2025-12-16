@@ -147,8 +147,3 @@ On définie une action $A$ par
     $$
     le jeu est-il résoluble&nbsp;?
 
-
-
-&nbsp;
-
----

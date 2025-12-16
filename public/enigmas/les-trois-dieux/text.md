@@ -18,8 +18,3 @@ Les dieux comprennent le français mais répondent dans leur propre langue par "
 
 3. 🌶️${}^{\color{red}2.5}$ En admettant que l’on ait le droit d’exploiter l’incapacité du dieu Vérité et du dieu Mensonge à répondre à certaines questions autoréférentielles, identifiez avec certitude l’identité de chacun des trois dieux en seulement deux questions.
 
-
-
-&nbsp;
-
----

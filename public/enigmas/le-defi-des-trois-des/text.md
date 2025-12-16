@@ -31,8 +31,3 @@ de dimension $\binom{14 + \ell}{\ell} \times \binom{14 + \ell}{\ell}$ entre deux
 
 4. 🌶️${}^{\color{red}1.1}$💻${}^{\color{blue}3.3}$ On considère de nouveau le cas du jeu en concurrence pure (sans coalition). On suppose qu’après chaque relance, tous les joueurs observent le nombre $L$ de joueurs encore en jeu (n’ayant pas arrêté). Pour trois lancers et pour tout $K\le 100,$ déterminez un profil de stratégies pures tel que chaque joueur adopte sa meilleure réponse compte tenu des décisions des autres.
 
-
-
-&nbsp;
-
----
