@@ -205,9 +205,6 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
   };
 
   // ---------------- Filter images ----------------
-const [sortByDifficulty, setSortByDifficulty] = useState(false);
-const [sortByComputer, setSortByComputer] = useState(false);
-
   const normalizedQuery = normalize(searchQuery);
 
   const filteredImages = images.filter((img) => {
@@ -255,37 +252,34 @@ const [sortByComputer, setSortByComputer] = useState(false);
           </div>
 
           {/* Search */}
-
-
-// ---------------- Gallery ----------------
-<div className="mb-4 flex items-center gap-3">
+{/* Search + Dropdown */}
+<div className="flex w-full gap-3">
+  {/* Search */}
   <input
     type="text"
     placeholder="Rechercher..."
     value={searchQuery}
     onChange={(e) => setSearchQuery(e.target.value)}
-    className="w-full p-2 border border-gray-300 rounded h-12"
+    className="flex-1 p-2 border border-gray-300 rounded h-12"
   />
 
-  <label className="flex items-center gap-1">
-    <input
-      type="checkbox"
-      checked={sortByDifficulty}
-      onChange={(e) => setSortByDifficulty(e.target.checked)}
-      className="h-5 w-5"
-    />
-    Trier par difficulté
-  </label>
-
-  <label className="flex items-center gap-1">
-    <input
-      type="checkbox"
-      checked={sortByComputer}
-      onChange={(e) => setSortByComputer(e.target.checked)}
-      className="h-5 w-5"
-    />
-    Trier par compute
-  </label>
+  {/* Dropdown */}
+  <select
+    className="w-48 p-2 border border-gray-300 rounded h-12 bg-white"
+    defaultValue=""
+    onChange={(e) => {
+      console.log("Selected:", e.target.value);
+      // tu pourras brancher ici un filtre plus tard
+    }}
+  >
+    <option value="" disabled>
+      Filtrer par…
+    </option>
+    <option value="difficulty">Difficulté</option>
+    <option value="computer">Usage ordinateur</option>
+    <option value="recent">Plus récentes</option>
+    <option value="az">A → Z</option>
+  </select>
 </div>
 
         </div>
