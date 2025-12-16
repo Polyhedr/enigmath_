@@ -35,7 +35,7 @@ Dans le fichier `.tex`, le code Python doit être inclus avec la syntaxe suivant
 Pour chaque question, n’oubliez pas de spécifier les indices de **difficulté** et d’**exigence en calcul** (valeurs $x$ comprises entre 0 et 5) à l’aide de `\indicators{DIFFICULTE}{EXIGENCE_CALCUL}`.
 Ces indices sont affichés avec les symboles suivants :
 
-- 🌶️$1^x$ : **indice de difficulté** (avec $x \in [0,5^x]$)
+- 🌶️ $1^x$ : **indice de difficulté** (avec $x \in [0,5^x]$)
     - $x < 1$ : facile  
     - $x \in [1,2]$ : moyen  
     - $x \in [2,3]$ : difficile  
