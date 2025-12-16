@@ -186,10 +186,15 @@ class MD:
         t = t.replace("\medskip", "\n\n")
         t = t.replace(r'\(', '$').replace(r'\)', '$')
         t = t.replace(r'---', '—')
-        t = t.replace(r'~', '')
+        t = t.replace(r'~', ' ')
         t = display_math(t, indent_math)
+        if r'\quad' in t and '\\begin{align*}\n' in t:
+            if not r'&' in t.split(r'\begin')[1]:
+                t = t.replace(r'\quad', r'//&').replace('\\begin{align*}\n', r'\\begin{align*}\n&')
         # if quad is in t, and if we split by begin, the first chunck do not contain a &, then we replace quad by //&
-        # new line with a sigle ponctuation...
+
+        # new line with a sigle ponctuation... part du tresor, 3 dés, 3 dieux, plus rien sur la ligne
+        # last dash line encore utile ?
         return t
     
     def build(self):

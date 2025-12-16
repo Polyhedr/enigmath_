@@ -13,7 +13,7 @@ défini comme la somme des trois résultats. Après ce premier lancer, chaque jo
    Les scores intermédiaires sont gardés secrets jusqu'à la fin de la partie. Lorsque tous les joueurs ont terminé, les scores sont révélés. 
    Le joueur qui possède le plus petit score est déclaré perdant. 
    En cas d'égalité pour le plus faible score, le perdant est choisi au hasard 
-   parmi les exæquo.
+   parmi les ex æquo.
 
    
 
