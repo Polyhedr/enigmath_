@@ -276,7 +276,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
   <div className="relative">
 
 {/* Top-right indicators */}
-<div className="absolute top-0 right-0 flex gap-2 whitespace-nowrap text-sm font-semibold">
+<div className="absolute top-0 right-0 flex gap-0 whitespace-nowrap text-sm font-semibold">
   {typeof img.difficulty === "number" && (
     <span className="text-red-300">
       🌶️<sup>{img.difficulty.toFixed(1)}</sup>
