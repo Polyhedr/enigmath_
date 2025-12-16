@@ -382,7 +382,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
                 )}&body=${
                   activeEnigma.folderName === "Introduction"
                     ? "Merci d'inclure votre .zip en pièce jointe de ce mail."
-                    : "Pour soumettre une question, merci de suivre la même procédure que pour soumettre une nouvelle énigme, en incluant uniquement une question et sa réponse dans le fichier .tex.%0APour soumettre une réponse, merci de suivre la même procédure, mais en incluant uniquement la réponse dans le .tex.%0ADans les deux cas, votre soumission sera évaluée et, si elle est recevable, incorporée à la solution actuelle (comme alternative dans le cas d’une soumission de question)."
+                    : "Pour soumettre une question, merci de suivre la même procédure que pour soumettre une nouvelle énigme, en incluant uniquement une question et sa réponse dans le fichier .tex.%0A%0APour soumettre une réponse, merci de suivre la même procédure, mais en incluant uniquement la réponse dans le .tex.%0A%0ADans les deux cas, votre soumission sera évaluée et, si elle est recevable, incorporée à la solution actuelle (comme alternative dans le cas d’une soumission de question)."
                 }`}
                 className="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-2xl"
                 title={
