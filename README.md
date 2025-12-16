@@ -35,14 +35,14 @@ Dans le fichier `.tex`, le code Python doit être inclus avec la syntaxe suivant
 Pour chaque question, n’oubliez pas de spécifier les indices de **difficulté** et d’**exigence en calcul** (valeurs $x$ comprises entre 0 et 5) à l’aide de `\indicators{DIFFICULTE}{EXIGENCE_CALCUL}`.
 Ces indices sont affichés avec les symboles suivants :
 
-- 🌶️${}^x$ : **indice de difficulté** (avec $x \in [0,5]$)
+- 🌶️$^x$ : **indice de difficulté** (avec $x \in [0,5]$)
     - $x < 1$ : facile  
     - $x \in [1,2]$ : moyen  
     - $x \in [2,3]$ : difficile  
     - $x \in [3,4]$ : très difficile  
     - $x \in [4,5]$ : niveau recherche  
 
-- 💻${}^x$ : **indice d’exigence en calcul** (avec $x \in [0,5]$)
+- 💻$^x$ : **indice d’exigence en calcul** (avec $x \in [0,5]$)
     - $x < 1$ : l’ordinateur peut aider, mais la résolution reste possible entièrement à la main  
     - $x \in [1,2]$ : code élémentaire  
     - $x \in [2,3]$ : code plutôt avancé  
@@ -74,33 +74,33 @@ Ajoutez des tags en haut du fichier pour catégoriser l’énigme, par exemple :
 
 Incluez des références relatives à l’énigme dans la sous-section :
 
-    ```latex
-    \subsection*{Notes et références}
-    ```
+```latex
+\subsection*{Notes et références}
+```
 
 Citez vos sources en ajoutant la ligne suivante dans le fichier `.tex` :
 
-    ```latex
-    \bibliography{\currfiledir/sources.bib}
-        ```
+```latex
+\bibliography{\currfiledir/sources.bib}
+```
 
 ## 5. **Compilation**
 
 Revenez dans le dossier racine parent et modifiez `solution.tex`, en mettant à jour la ligne :
 
-    ```latex
-    \input{enigmas/l-enigme-de-freudenthal/text.tex}
-    ```
+```latex
+\input{enigmas/l-enigme-de-freudenthal/text.tex}
+```
 
-    afin d’inclure la version correcte de votre énigme.
+afin d’inclure la version correcte de votre énigme.
 
 Lancez ensuite les commandes suivantes dans votre terminal :
 
-    ```bash
-    lualatex solution
-    bibtex solution
-    lualatex solution
-    lualatex solution
-    ```
+```bash
+lualatex solution
+bibtex solution
+lualatex solution
+lualatex solution
+```
 
 Cela générera le fichier `solution.pdf`. Copiez-le dans le dossier de votre énigme, zippez ce dossier, et envoyez-le par mail à **contact.enigmath@proton.me**.
