@@ -8,13 +8,13 @@ $, initialement avec un seul jeton sur la case $0$, toutes les autres étant vid
 Au cours du jeu, chaque case peut contenir une pile quelconque de jetons, et l'objectif est de retirer tous les jetons de la ligne en appliquant une suite d'actions autorisées.  
 
 Une action $A$ est définie comme une transformation appliquée à une portion de la ligne, que l'on note
-    $$
-    \begin{align*}
-    A\triangleq(a_0, \dots, a_k) 
-    \longleftrightarrow  (a'_0, \dots, a'_k),
-    \end{align*}
-    $$
-    où $k \in \mathbb{N},$ $a_0, \dots, a_k,a'_0, \dots, a'_k \in \mathbb{N}$ et $(a_0, \dots, a_k)\neq (a'_0, \dots, a'_k)$. Pour $i\in\mathbb Z$, appliquer $A$ sur les $k+1$ cases consécutives d'indices $i,\dots,i+k$ signifie qu'on retire $a_j$ jetons de la case $i+j$ et qu'on ajoute $a'_j$ jetons à la même case, pour tout $0\le j\le k$. L'opération n'est permise que si chaque case $i+j$ contient au moins $a_j$ jetons, suffisants pour effectuer les retraits requis (aucun nombre négatif de jetons n'est autorisé, même temporairement). L'action $A$ peut également être effectuée dans le sens inverse en échangeant les $a_j$ et les $a'_j$.
+$$
+\begin{align*}
+A\triangleq(a_0, \dots, a_k) 
+\longleftrightarrow  (a'_0, \dots, a'_k),
+\end{align*}
+$$
+où $k \in \mathbb{N},$ $a_0, \dots, a_k,a'_0, \dots, a'_k \in \mathbb{N}$ et $(a_0, \dots, a_k)\neq (a'_0, \dots, a'_k)$. Pour $i\in\mathbb Z$, appliquer $A$ sur les $k+1$ cases consécutives d'indices $i,\dots,i+k$ signifie qu'on retire $a_j$ jetons de la case $i+j$ et qu'on ajoute $a'_j$ jetons à la même case, pour tout $0\le j\le k$. L'opération n'est permise que si chaque case $i+j$ contient au moins $a_j$ jetons, suffisants pour effectuer les retraits requis (aucun nombre négatif de jetons n'est autorisé, même temporairement). L'action $A$ peut également être effectuée dans le sens inverse en échangeant les $a_j$ et les $a'_j$.
 
 
 

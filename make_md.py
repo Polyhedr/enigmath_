@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-def display_math(text, indent_step=4):
+def display_math(text, indent_step=3):
     """
     Normalize LaTeX display math blocks and indent all following lines.
 
@@ -180,7 +180,7 @@ class MD:
     def remove_comments(self, t):
         return '\n'.join([l.split('%')[0] for l in t.split('\n')])
     
-    def process(self, t):
+    def process(self, t, indent_math):
         t = re.sub(r'^[ \t]+', '', t, flags=re.MULTILINE)
         t = latex_lists(t)
         t = t.replace(r'\og ', '"').replace(r' \fg{}', '"')
@@ -188,16 +188,16 @@ class MD:
         t = t.replace(r'\(', '$').replace(r'\)', '$')
         t = t.replace(r'---', '—')
         t = t.replace(r'~', '$~$')
-        t = display_math(t)
+        t = display_math(t, indent_math)
         # t = t.replace(r'\[', f'\n$$\n\\begin{self.le}equation*{self.re}').replace(r'\]', f'\n\\end{self.le}equation*{self.re}\n$$')
         return t
     
     def build(self):
         out = "## Énoncé\n\n"
-        out += self.process(self.structured_text['statement'])
+        out += self.process(self.structured_text['statement'], 0)
         out += '\n\n**Questions :**\n\n'
         for e, q in enumerate(self.structured_text["questions"]):
-            out += f"{e+1}. {q['indicators']} {self.process(q['text'])}\n\n"
+            out += f"{e+1}. {q['indicators']} {self.process(q['text'], 4)}\n\n"
         out += "\n\n&nbsp;\n\n---"
         self.out = out
     
