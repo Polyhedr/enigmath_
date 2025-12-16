@@ -11,7 +11,7 @@ git pull origin main
 
 Voici les étapes à suivre pour soumettre votre énigme :
 
-1. **Édition de l’énigme**
+## 1. Édition de l’énigme
 
     Commencez par éditer le fichier `/enigmas/l-enigme-de-freudenthal/text.tex`.
 
@@ -49,7 +49,7 @@ Voici les étapes à suivre pour soumettre votre énigme :
         - $x \in [3,4]$ : code très difficile  
         - $x \in [4,5]$ : code reposant sur des algorithmes de niveau recherche 
 
-2. **Renommage du dossier**
+## 2. Renommage du dossier
 
     Une fois l’énigme éditée, vous pouvez renommer le dossier `l-enigme-de-freudenthal`.
 
@@ -58,7 +58,7 @@ Voici les étapes à suivre pour soumettre votre énigme :
     - chiffres (`0–9`)
     - tirets (`-`)
 
-3. **Titre et tags**
+## 3. Titre et tags
 
     Modifiez le titre de l’énigme dans le fichier `.tex`.
     
@@ -70,7 +70,7 @@ Voici les étapes à suivre pour soumettre votre énigme :
     \section*{TITRE DE MON ÉNIGME}
     ```
 
-4. **Références**
+## 4. Références
 
     Incluez des références relatives à l’énigme dans la sous-section :
 
@@ -84,7 +84,7 @@ Voici les étapes à suivre pour soumettre votre énigme :
         \bibliography{\currfiledir/sources.bib}
         ```
 
-5. **Compilation**
+## 5. Compilation
 
     Revenez dans le dossier racine parent et modifiez `solution.tex`, en mettant à jour la ligne :
 
