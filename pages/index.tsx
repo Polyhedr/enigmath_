@@ -278,19 +278,19 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 {/* Top-right indicators */}
 <div className="absolute top-0 right-0 flex gap-0 whitespace-nowrap text-sm font-semibold">
   {typeof img.difficulty === "number" && (
-    <span className="text-red-300">
+    <span className="text-red">
       🌶️<sup>{img.difficulty.toFixed(1)}</sup>
     </span>
   )}
   {typeof img.computer === "number" && (
-    <span className="text-blue-300">
+    <span className="text-blue">
       💻<sup>{img.computer.toFixed(1)}</sup>
     </span>
   )}
 </div>
 
     {/* Title with padding to avoid overlap */}
-    <div className="pr-24 text-lg font-semibold leading-tight line-clamp-2">
+    <div className="pr-20 text-lg font-semibold leading-tight line-clamp-2">
       {img.title}
     </div>
 
