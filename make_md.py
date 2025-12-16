@@ -190,7 +190,7 @@ class MD:
         t = display_math(t, indent_math)
         if r'\quad' in t and '\\begin{align*}\n' in t:
             if not r'&' in t.split(r'\begin')[1]:
-                t = t.replace(r'\quad', r'\\&').replace('\\begin{align*}\n', r'\\begin{align*}\n&')
+                t = t.replace(r'\quad', '\\\&').replace('\\begin{align*}\n', '\\begin{align*}\n &')
 
         # new line with a sigle ponctuation... part du tresor, 3 dés, 3 dieux, plus rien sur la ligne
         # last dash line encore utile ?
