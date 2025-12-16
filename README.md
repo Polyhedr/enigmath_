@@ -13,94 +13,94 @@ Voici les étapes à suivre pour soumettre votre énigme :
 
 ## 1. Édition de l’énigme
 
-    Commencez par éditer le fichier `/enigmas/l-enigme-de-freudenthal/text.tex`.
+Commencez par éditer le fichier `/enigmas/l-enigme-de-freudenthal/text.tex`.
 
-    Vous pouvez aussi :
-    - modifier l’image associée à l’énigme : `/enigmas/l-enigme-de-freudenthal/image.jpg`
-    - inclure du code Python :
-        - `1.py` pour la question 1,
-        - `2.py` pour la question 2, etc.
-        - si plusieurs fichiers de code correspondent à une même question, utilisez par exemple `2a.py`, `2b.py` pour la question 2.
+Vous pouvez aussi :
+- modifier l’image associée à l’énigme : `/enigmas/l-enigme-de-freudenthal/image.jpg`
+- inclure du code Python :
+    - `1.py` pour la question 1,
+    - `2.py` pour la question 2, etc.
+    - si plusieurs fichiers de code correspondent à une même question, utilisez par exemple `2a.py`, `2b.py` pour la question 2.
 
-    Dans le fichier `.tex`, le code Python doit être inclus avec la syntaxe suivante :
+Dans le fichier `.tex`, le code Python doit être inclus avec la syntaxe suivante :
 
-    ```latex
-    \begin{lstlisting}
-    (*@\codeheader{\currfiledir/1.py}@*)
-    (*@ @*)
-    \end{lstlisting}
-    \vspace{-.455cm}
-    \lstinputlisting{\currfiledir/1.py}
-    ```
-    Pour chaque question, n’oubliez pas de spécifier les indices de **difficulté** et d’**exigence en calcul** (valeurs $x$ comprises entre 0 et 5) à l’aide de `\indicators{DIFFICULTE}{EXIGENCE_CALCUL}`.
-    Ces indices sont affichés avec les symboles suivants :
+```latex
+\begin{lstlisting}
+(*@\codeheader{\currfiledir/1.py}@*)
+(*@ @*)
+\end{lstlisting}
+\vspace{-.455cm}
+\lstinputlisting{\currfiledir/1.py}
+```
+Pour chaque question, n’oubliez pas de spécifier les indices de **difficulté** et d’**exigence en calcul** (valeurs $x$ comprises entre 0 et 5) à l’aide de `\indicators{DIFFICULTE}{EXIGENCE_CALCUL}`.
+Ces indices sont affichés avec les symboles suivants :
 
-    - 🌶️${}^x$ : **indice de difficulté** (avec $x \in [0,5]$)
-        - $x < 1$ : facile  
-        - $x \in [1,2]$ : moyen  
-        - $x \in [2,3]$ : difficile  
-        - $x \in [3,4]$ : très difficile  
-        - $x \in [4,5]$ : niveau recherche  
+- 🌶️${}^x$ : **indice de difficulté** (avec $x \in [0,5]$)
+    - $x < 1$ : facile  
+    - $x \in [1,2]$ : moyen  
+    - $x \in [2,3]$ : difficile  
+    - $x \in [3,4]$ : très difficile  
+    - $x \in [4,5]$ : niveau recherche  
 
-    - 💻${}^x$ : **indice d’exigence en calcul** (avec $x \in [0,5]$)
-        - $x < 1$ : l’ordinateur peut aider, mais la résolution reste possible entièrement à la main  
-        - $x \in [1,2]$ : code élémentaire  
-        - $x \in [2,3]$ : code plutôt avancé  
-        - $x \in [3,4]$ : code très difficile  
-        - $x \in [4,5]$ : code reposant sur des algorithmes de niveau recherche 
+- 💻${}^x$ : **indice d’exigence en calcul** (avec $x \in [0,5]$)
+    - $x < 1$ : l’ordinateur peut aider, mais la résolution reste possible entièrement à la main  
+    - $x \in [1,2]$ : code élémentaire  
+    - $x \in [2,3]$ : code plutôt avancé  
+    - $x \in [3,4]$ : code très difficile  
+    - $x \in [4,5]$ : code reposant sur des algorithmes de niveau recherche 
 
 ## 2. Renommage du dossier
 
-    Une fois l’énigme éditée, vous pouvez renommer le dossier `l-enigme-de-freudenthal`.
+Une fois l’énigme éditée, vous pouvez renommer le dossier `l-enigme-de-freudenthal`.
 
-    Pour de bonnes pratiques, limitez-vous aux caractères suivants :
-    - lettres (`a–z`, `A–Z`)
-    - chiffres (`0–9`)
-    - tirets (`-`)
+Pour de bonnes pratiques, limitez-vous aux caractères suivants :
+- lettres (`a–z`, `A–Z`)
+- chiffres (`0–9`)
+- tirets (`-`)
 
 ## 3. Titre et tags
 
-    Modifiez le titre de l’énigme dans le fichier `.tex`.
-    
-    Ajoutez des tags en haut du fichier pour catégoriser l’énigme, par exemple :
+Modifiez le titre de l’énigme dans le fichier `.tex`.
 
-    ```latex
-    % logique épistémique
-    % arithmétique
-    \section*{TITRE DE MON ÉNIGME}
-    ```
+Ajoutez des tags en haut du fichier pour catégoriser l’énigme, par exemple :
+
+```latex
+% logique épistémique
+% arithmétique
+\section*{TITRE DE MON ÉNIGME}
+```
 
 ## 4. Références
 
-    Incluez des références relatives à l’énigme dans la sous-section :
+Incluez des références relatives à l’énigme dans la sous-section :
 
-        ```latex
-        \subsection*{Notes et références}
+    ```latex
+    \subsection*{Notes et références}
+    ```
+
+Citez vos sources en ajoutant la ligne suivante dans le fichier `.tex` :
+
+    ```latex
+    \bibliography{\currfiledir/sources.bib}
         ```
 
-    Citez vos sources en ajoutant la ligne suivante dans le fichier `.tex` :
+## 5. **Compilation**
 
-        ```latex
-        \bibliography{\currfiledir/sources.bib}
-        ```
+Revenez dans le dossier racine parent et modifiez `solution.tex`, en mettant à jour la ligne :
 
-## 5. Compilation
+    ```latex
+    \input{enigmas/l-enigme-de-freudenthal/text.tex}
+    ```
 
-    Revenez dans le dossier racine parent et modifiez `solution.tex`, en mettant à jour la ligne :
+    afin d’inclure la version correcte de votre énigme.
 
-        ```latex
-        \input{enigmas/l-enigme-de-freudenthal/text.tex}
-        ```
+Lancez ensuite les commandes suivantes dans votre terminal :
 
-        afin d’inclure la version correcte de votre énigme.
+    ```bash
+    lualatex solution
+    bibtex solution
+    lualatex solution
+    lualatex solution
+    ```
 
-    Lancez ensuite les commandes suivantes dans votre terminal :
-
-        ```bash
-        lualatex solution
-        bibtex solution
-        lualatex solution
-        lualatex solution
-        ```
-
-    Cela générera le fichier `solution.pdf`. Copiez-le dans le dossier de votre énigme, zippez ce dossier, et envoyez-le par mail à **contact.enigmath@proton.me**.
+Cela générera le fichier `solution.pdf`. Copiez-le dans le dossier de votre énigme, zippez ce dossier, et envoyez-le par mail à **contact.enigmath@proton.me**.
