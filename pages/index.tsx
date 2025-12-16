@@ -273,7 +273,6 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
     }}
   >
     <option value="" disabled>
-      Filtrer par…
     </option>
     <option value="difficulty">Difficulté</option>
     <option value="computer">Usage ordinateur</option>
