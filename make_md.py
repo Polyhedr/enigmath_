@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+bp=breakpoint
 
 def display_math(text, indent_step=3):
     """
@@ -188,8 +189,9 @@ class MD:
         t = t.replace(r'---', '—')
         t = t.replace(r'~', ' ')
         t = display_math(t, indent_math)
-        if r'\quad' in t and '\\begin{align*}\n' in t:
+        if (r'\quad' in t or r'\qquad' in t) and '\\begin{align*}\n' in t:
             if not r'&' in t.split(r'\begin')[1]:
+                t = t.replace(r'\qquad', '\\\&')
                 t = t.replace(r'\quad', '\\\&')
                 t = re.sub(
                     r"(\\begin\{align\*\}\n[ \t]*)",
