@@ -125,7 +125,7 @@ On définie une action $A$ par
 11. 🌶️${}^{\color{red}1.4}$ Avec les deux actions (de taille non nécessairement égale)
     $$
     \begin{align*}
-    A \triangleq 
+    & A \triangleq 
     \begin{bmatrix}
     0 & 0 &\cdots & 0 \\
     1 & 0 &\cdots & 0
@@ -135,7 +135,7 @@ On définie une action $A$ par
     1 & 1 &\cdots & 1 \\
     0 & 0 &\cdots & 0
     \end{bmatrix}
-    \qquad \text{et} \qquad 
+    \\& \text{et} \\& 
     B \triangleq  \begin{bmatrix}
     0 &\cdots & 0
     \end{bmatrix}

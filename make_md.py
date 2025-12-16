@@ -199,8 +199,8 @@ class MD:
         t = t.replace(r'---', '—')
         t = t.replace(r'~', ' ')
         t = display_math(t, indent_math)
-        if (r'\quad' in t or r'\qquad' in t) and '\\begin{align*}\n' in t:
-            if not re.search(r"\\begin\{align\*\}.*?&.*?\\end\{align\*\}",t,flags=re.S):
+        if (r'\quad' in t or r'\qquad' in t) and '\\begin{align*}\n' in t:       
+            if not re.search(r"\\begin\{align\*\}.*?&.*?\\end\{align\*\}", r'\begin'+t.split(r'\begin')[1], flags=re.S):
                 t = t.replace(r'\qquad', '\\\&')
                 t = t.replace(r'\quad', '\\\&')
                 t = re.sub(
@@ -208,7 +208,7 @@ class MD:
                     r"\1& ",
                     t,
                     count=1
-                )        
+                )
         # last dash line encore utile ?
         return t
     
