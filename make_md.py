@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-def display_math(text, indent_step=3):
+def display_math(text, indent_step=4):
     """
     Normalize LaTeX display math blocks and indent all following lines.
 
