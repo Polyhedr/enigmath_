@@ -252,34 +252,30 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           </div>
 
           {/* Search */}
-{/* Search + Dropdown */}
-<div className="flex w-full gap-3">
-  {/* Search */}
+{/* Search with embedded arrow */}
+<div className="relative w-full">
   <input
     type="text"
     placeholder="Rechercher..."
     value={searchQuery}
     onChange={(e) => setSearchQuery(e.target.value)}
-    className="flex-1 p-2 border border-gray-300 rounded h-12"
+    className="w-full h-12 pl-3 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-gray-400"
   />
 
-  {/* Dropdown */}
-  <select
-    className="w-4 p-2 border border-gray-300 rounded h-12 bg-white"
-    defaultValue=""
-    onChange={(e) => {
-      console.log("Selected:", e.target.value);
-      // tu pourras brancher ici un filtre plus tard
+  {/* Arrow button inside input */}
+  <button
+    type="button"
+    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800 transition"
+    onClick={() => {
+      console.log("Open filters / dropdown");
+      // ici tu ouvriras ton menu plus tard
     }}
+    aria-label="Open filters"
   >
-    <option value="" disabled>
-    </option>
-    <option value="difficulty">Difficulté</option>
-    <option value="computer">Usage ordinateur</option>
-    <option value="recent">Plus récentes</option>
-    <option value="az">A → Z</option>
-  </select>
+    ▾
+  </button>
 </div>
+
         </div>
 
         {/* ---------------- Gallery ---------------- */}
