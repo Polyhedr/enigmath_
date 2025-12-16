@@ -31,6 +31,18 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
   const [progress, setProgress] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // ---------------- normalize strings ----------------
+  const normalize = (str: string) =>
+    str
+      .toLowerCase()
+      .normalize("NFD")                 // separate accents
+      .replace(/[\u0300-\u036f]/g, "")  // remove accents
+      .replace(/['’"`´]/g, "")          // remove apostrophes
+      .replace(/[^a-z0-9\s]/g, " ")     // remove punctuation
+      .replace(/\s+/g, " ")             // collapse spaces
+      .trim();
+
+
   // ---------------- Download solution ----------------
   const triggerDownload = (blob: Blob, filename: string) => {
     const link = document.createElement("a");
@@ -193,10 +205,19 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
   };
 
   // ---------------- Filter images ----------------
+  const normalizedQuery = normalize(searchQuery);
+
   const filteredImages = images.filter((img) => {
-    const query = searchQuery.toLowerCase();
-    const titleMatch = img.title?.toLowerCase().includes(query) ?? false;
-    const tagsMatch = img.tags?.some((tag) => tag.toLowerCase().includes(query)) ?? false;
+    if (!normalizedQuery) return true;
+
+    const titleMatch =
+      img.title && normalize(img.title).includes(normalizedQuery);
+
+    const tagsMatch =
+      img.tags?.some((tag) =>
+        normalize(tag).includes(normalizedQuery)
+      ) ?? false;
+
     return titleMatch || tagsMatch;
   });
 
@@ -354,7 +375,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
               {/* Mail */}
               <a
-                href={`mailto:contact.enigmath@gmail.com?subject=${encodeURIComponent(
+                href={`mailto:contact.enigmath@proton.me?subject=${encodeURIComponent(
                   activeEnigma.folderName
                 )}&body=${
                   activeEnigma.folderName === "Introduction"
