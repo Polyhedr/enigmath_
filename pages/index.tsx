@@ -265,7 +265,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
   {/* Dropdown */}
   <select
-    className="w-28 px-2 py-1 border border-gray-300 rounded h-9 bg-white text-sm"
+    className="w-16 p-2 border border-gray-300 rounded h-12 bg-white"
     defaultValue=""
     onChange={(e) => {
       console.log("Selected:", e.target.value);
@@ -280,7 +280,6 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
     <option value="az">A → Z</option>
   </select>
 </div>
-
         </div>
 
         {/* ---------------- Gallery ---------------- */}
