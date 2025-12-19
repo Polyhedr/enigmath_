@@ -167,6 +167,16 @@ class MD:
     
     def process(self, t, indent_math):
         t = re.sub(
+            r'\\textbf\{([^{}]+)\}',
+            r'**\1**',
+            t
+        )
+        t = re.sub(
+            r'\\emph\{([^{}]+)\}',
+            r'*\1*',
+            t
+        )
+        t = re.sub(
             r"\s([:;!?])",
             r"&nbsp;\1",
             t
@@ -194,6 +204,11 @@ class MD:
                     t,
                     count=1
                 )
+        t = re.sub(
+            r'\{([^{}]+)\}',
+            r'\1',
+            t
+        )
         return t
     
     def build(self):
