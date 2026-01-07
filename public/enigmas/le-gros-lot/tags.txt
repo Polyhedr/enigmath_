@@ -1,6 +1,8 @@
 2.4
 0
 Le gros lot
+Enigmath
+7 janvier 2026
 probabilité
 recherche opérationnelle
 optimisation

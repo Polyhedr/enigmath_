@@ -17,6 +17,8 @@ interface EnigmaData {
   text: string;
   folderName: string;
   title: string;
+  author: string;
+  date: string;
   difficulty: number | null;
   computer: number | null;
 }
@@ -142,6 +144,15 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           if (parts.length >= 3) {
             title = parts[2];
           }
+
+          if (parts.length >= 4) {
+            author = parts[3];
+          }
+
+          if (parts.length >= 5) {
+            date = parts[4];
+          }
+
         }
       } catch (err) {
         console.warn(`Failed to load tags.txt for ${folderName}`, err);
@@ -152,6 +163,8 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
         text,
         folderName,
         title,
+        author,
+        date,
         difficulty,
         computer,
       });

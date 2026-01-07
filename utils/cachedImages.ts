@@ -34,6 +34,8 @@ export default async function getResults(): Promise<ImageProps[]> {
     let computer = 0;
     let difficulty = 0;
     let title: string | undefined;
+    let author: string | undefined;
+    let date: string | undefined;
     let tags: string[] = [];
 
 if (fs.existsSync(tagsFile)) {
@@ -60,8 +62,16 @@ if (fs.existsSync(tagsFile)) {
       title = parts[2];
     }
 
+    if (parts.length >= 4) {
+      author = parts[3];
+    }
+
+    if (parts.length >= 5) {
+      date = parts[4];
+    }
+
     // Remaining elements → tags
-    tags = parts.slice(3);
+    tags = parts.slice(5);
   } catch (err) {
     console.error(`Cannot read tags.txt in "${folder}"`, err);
   }
@@ -76,6 +86,8 @@ if (fs.existsSync(tagsFile)) {
       difficulty,
       computer,
       title,
+      author,
+      date,
       tags,
     };
   });

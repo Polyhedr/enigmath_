@@ -1,6 +1,8 @@
 2.1
 0
 L'échiquier du diable
+Enigmath
+7 janvier 2026
 informatique
 logique
 graphe

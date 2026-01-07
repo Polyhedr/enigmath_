@@ -3,9 +3,9 @@ from pathlib import Path
 bp=breakpoint
 
 def extract_tags(tex):
-    before_section, after_section = tex.split(r'\section*{')[:2]
-    title = after_section.split(r'}')[0]
-    tags = [title]
+    before_section, after_section = tex.split(r'\mysection')[:2]
+    title, author, date = after_section.split(r'}')[:3]
+    tags = [title[1:], author[1:], date[1:]]
     for line in before_section.splitlines():
         line = line.strip()
         if line.startswith("%"):

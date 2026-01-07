@@ -1,6 +1,8 @@
 4.4
 2.2
 Manger un max de pizza
+Enigmath
+7 janvier 2026
 optimisation
 graphe
 théorie des jeux
