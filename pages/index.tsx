@@ -340,6 +340,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
         >
           {/* Header */}
           <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 gap-4 border-b bg-white border-gray-300">
+            <div className="flex justify-between items-center p-4 gap-4">
             <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
             <div className="flex gap-2">
               
@@ -387,6 +388,11 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
               </div>
             )}
           </div>
+  {/* Thin bottom band */}
+  <div className="px-4 py-1 text-xs text-gray-500 border-t border-gray-200">
+    Par {activeEnigma.author} — {activeEnigma.date}
+  </div>
+          </div>
 
               {/* Mail */}
               <a
@@ -418,12 +424,6 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
                 ✕
               </button>
             </div>
-          
-  {/* Subheader */}
-  <div className="px-4 pb-2 text-xs text-gray-500">
-    Par {activeEnigma.author} — {activeEnigma.date}
-  </div>
-      
           </div>
 
           {/* Scrollable content */}
