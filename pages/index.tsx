@@ -339,19 +339,19 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           className="fixed inset-0 z-50 bg-white text-black overflow-y-auto"
         >
 {/* Header */}
-<div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-300">
+<div className="fixed top-0 left-0 right-0 z-50 bg-white">
   {/* Main header row */}
-  <div className="flex justify-between items-center p-4 gap-4">
+  <div className="flex justify-between items-center px-2 py-2 gap-2">
     <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
     <div className="flex gap-2">
       {/* Download button */}
-      <div className="relative w-12 h-12 flex items-center justify-center">
+      <div className="relative w-10 h-10 flex items-center justify-center">
         <button
           onClick={downloadSolution}
           disabled={downloading}
-          className={`w-12 h-12 flex items-center justify-center 
+          className={`w-10 h-10 flex items-center justify-center 
             ${downloading ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"} 
-            text-white rounded-full font-bold transition text-2xl`}
+            text-white rounded-full font-bold transition text-xl`}
           title={
             activeEnigma.folderName === "Introduction"
               ? "Télécharger le template"
@@ -364,8 +364,8 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           <div className="absolute inset-0 flex items-center justify-center">
             <svg
               className="animate-spin text-white"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
             >
               <circle
@@ -396,7 +396,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
         )}&body=${activeEnigma.folderName === "Introduction"
           ? "Merci d'inclure votre .zip en pièce jointe de ce mail."
           : "Instructions..."}`}
-        className="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-2xl"
+        className="w-10 h-10 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-xl"
         title={
           activeEnigma.folderName === "Introduction"
             ? "Soumettre une énigme"
@@ -409,7 +409,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
       {/* Close button */}
       <button
         onClick={closeEnigma}
-        className="w-12 h-12 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded text-gray-700 font-semibold transition text-2xl"
+        className="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded text-gray-700 font-semibold transition text-xl"
         title="Fermer"
       >
         ✕
@@ -422,6 +422,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
     Par {activeEnigma.author} — {activeEnigma.date}
   </div>
 </div>
+
 
 
           {/* Scrollable content */}
