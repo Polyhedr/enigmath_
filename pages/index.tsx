@@ -118,6 +118,8 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
       /* ---------- tags.txt ---------- */
       let title: string | undefined;
+      let author: string | undefined;
+      let date: string | undefined;
       let difficulty = 0;
       let computer = 0;
 
