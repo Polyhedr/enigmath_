@@ -17,7 +17,7 @@ Le but pour Alice est de manger le plus de pizza possible.
 
 3. 🌶️${}^{\color{red}1.8}$ Montrez que c’est le mieux qu’Alice puisse faire si, après avoir choisi sa première part, elle prend systématiquement la part révélée par Bob.
 
-4. 🌶️${}^{\color{red}1.0}$💻${}^{\color{blue}2.2}$ Montrez que Bob peut choisir une découpe de la pizza de manière à s'assurer de manger au moins $\frac59$ de celle-ci.
+4. 🌶️${}^{\color{red}1.0}$💻${}^{\color{blue}2.2}$ Montrez que Bob peut choisir une découpe de la pizza de manière à s'assurer de manger au moins $\frac{5}{9}$ de celle-ci.
 
-5. 🌶️${}^{\color{red}4.4}$ Montrez qu’Alice peut manger au moins $\frac49$ de la pizza.
+5. 🌶️${}^{\color{red}4.4}$ Montrez qu’Alice peut manger au moins $\frac{4}{9}$ de la pizza.
 

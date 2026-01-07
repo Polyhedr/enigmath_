@@ -204,11 +204,24 @@ class MD:
                     t,
                     count=1
                 )
-        t = re.sub(
-            r'\{([^{}]+)\}',
-            r'\1',
-            t
+        # t = re.sub(
+        #     r'\{([^{}]+)\}',
+        #     r'\1',
+        #     t
+        # )
+
+        parts = re.split(
+            r'(\$.*?\$|\\begin\{align\*\}.*?\\end\{align\*\})', 
+            t, 
+            flags=re.DOTALL
         )
+        for i in range(len(parts)):
+            if not re.match(r'^\$|^\\begin\{align\*\}', parts[i]):
+                # Remove braces {…} outside math
+                parts[i] = re.sub(r'\{([^{}]+)\}', r'\1', parts[i])
+        t = ''.join(parts)
+
+
         return t
     
     def build(self):
