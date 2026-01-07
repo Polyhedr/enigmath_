@@ -421,6 +421,9 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
           {/* Scrollable content */}
           <div className="pt-28 max-w-4xl mx-auto px-6 py-6 flex flex-col gap-6">
+            {/* Image */}
+            <div className="flex-shrink-0 mx-auto">
+
 {activeEnigma.folderName !== "Introduction" && (
   <div className="w-full text-xs text-gray-500 text-center">
     <span>Par </span>
@@ -428,8 +431,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
     <span>, le {activeEnigma.date}</span>
   </div>
 )}
-            {/* Image */}
-            <div className="flex-shrink-0 mx-auto">
+
               {activeEnigma.folderName === "Introduction" ? (
                 <img src="/Introduction/logo.svg" alt="Logo" className="h-32 w-auto object-contain" />
               ) : (
