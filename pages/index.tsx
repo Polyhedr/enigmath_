@@ -418,11 +418,9 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
   </div>
 
   {/* Thin bottom band */}
-  {activeEnigma.folderName !== "Introduction" && (
-  <div className="w-full text-xs text-gray-500 px-3 py-0 bg-gray-200">
-    Par {activeEnigma.author} — {activeEnigma.date}
+  <div className="w-full text-xs text-gray-500 px-3 py-0">
+    {activeEnigma.folderName !== "Introduction" && (Par {activeEnigma.author} — {activeEnigma.date})}
   </div>
-  )}
 </div>
 
 
