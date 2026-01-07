@@ -388,11 +388,6 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
               </div>
             )}
           </div>
-  {/* Thin bottom band */}
-  <div className="px-4 py-1 text-xs text-gray-500 border-t border-gray-200">
-    Par {activeEnigma.author} — {activeEnigma.date}
-  </div>
-          </div>
 
               {/* Mail */}
               <a
@@ -459,7 +454,13 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
               </ReactMarkdown>
             </div>
           </div>
+        
         </div>
+  {/* Thin bottom band */}
+  <div className="px-4 py-1 text-xs text-gray-500 border-t border-gray-200">
+    Par {activeEnigma.author} — {activeEnigma.date}
+  </div>
+          </div>
       )}
     </>
   );
