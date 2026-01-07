@@ -340,12 +340,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
         >
           {/* Header */}
           <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 gap-4 border-b bg-white border-gray-300">
-            <div className="flex flex-col">
-              <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
-    <span className="text-xs text-gray-500">
-      Par {activeEnigma.author} — {activeEnigma.date}
-    </span>
-            </div>
+            <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
             <div className="flex gap-2">
               
               {/* Download */}
@@ -423,6 +418,12 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
                 ✕
               </button>
             </div>
+          
+  {/* Subheader */}
+  <div className="px-4 pb-2 text-xs text-gray-500">
+    Par {activeEnigma.author} — {activeEnigma.date}
+  </div>
+      
           </div>
 
           {/* Scrollable content */}
