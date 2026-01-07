@@ -420,12 +420,12 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
 
           {/* Scrollable content */}
-          <div className="pt-28 max-w-4xl mx-auto px-6 py-8 flex flex-col gap-6">
+          <div className="pt-28 max-w-4xl mx-auto px-6 py-6 flex flex-col gap-6">
 {activeEnigma.folderName !== "Introduction" && (
-  <div className="w-full text-xs text-gray-500">
+  <div className="w-full text-xs text-gray-500 text-center">
     <span>Par </span>
-    <span className="font-medium">{activeEnigma.author}</span>
-    <span> — {activeEnigma.date}</span>
+    <span className="font-bold">{activeEnigma.author}</span>
+    <span>, le {activeEnigma.date}</span>
   </div>
 )}
             {/* Image */}
