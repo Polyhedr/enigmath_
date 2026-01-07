@@ -340,7 +340,12 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
         >
           {/* Header */}
           <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 gap-4 border-b bg-white border-gray-300">
-            <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
+            <div className="flex flex-col">
+              <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
+    <span className="text-xs text-gray-500">
+      Par {activeEnigma.author} — {activeEnigma.date}
+    </span>
+            </div>
             <div className="flex gap-2">
               
               {/* Download */}
@@ -469,6 +474,8 @@ export async function getStaticProps() {
       ...img,
       folderName: img.folderName,
       title: img.title,
+      author: img.author,
+      date: img.date,
       tags: img.tags ?? [],
       difficulty: img.difficulty ?? 0,
       computer: img.computer ?? 0,
