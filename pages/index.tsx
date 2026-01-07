@@ -341,7 +341,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 {/* Header */}
 <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-300">
   {/* Main header row */}
-  <div className="flex justify-between items-center p-3 gap-0">
+  <div className="flex justify-between items-center p-3 gap-3">
     <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
     <div className="flex gap-2">
       {/* Download button */}
