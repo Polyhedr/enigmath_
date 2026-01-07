@@ -338,94 +338,91 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           ref={overlayRef}
           className="fixed inset-0 z-50 bg-white text-black overflow-y-auto"
         >
-          {/* Header */}
-          <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4 gap-4 border-b bg-white border-gray-300">
-            {/* Main header row */}
-            <div className="flex justify-between items-center p-4 gap-4">
-            <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
-            <div className="flex gap-2">
-              
-              {/* Download */}
-          <div className="relative w-12 h-12 flex items-center justify-center">
-            <button
-              onClick={downloadSolution}
-              disabled={downloading}
-              className={`w-12 h-12 flex items-center justify-center 
-                ${
-                  downloading ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"
-                } text-white rounded-full font-bold transition text-2xl`}
-              title={
-                activeEnigma.folderName === "Introduction"
-                  ? "Télécharger le template"
-                  : "Télécharger la solution"
-              }
+{/* Header */}
+<div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-300">
+  {/* Main header row */}
+  <div className="flex justify-between items-center p-4 gap-4">
+    <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
+    <div className="flex gap-2">
+      {/* Download button */}
+      <div className="relative w-12 h-12 flex items-center justify-center">
+        <button
+          onClick={downloadSolution}
+          disabled={downloading}
+          className={`w-12 h-12 flex items-center justify-center 
+            ${downloading ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"} 
+            text-white rounded-full font-bold transition text-2xl`}
+          title={
+            activeEnigma.folderName === "Introduction"
+              ? "Télécharger le template"
+              : "Télécharger la solution"
+          }
+        >
+          ⤓
+        </button>
+        {downloading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg
+              className="animate-spin text-white"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
             >
-              ⤓
-            </button>
-
-            {downloading && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg
-                  className="animate-spin text-white"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="white"
-                    strokeWidth="4"
-                    fill="none"
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="white"
-                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                  />
-                </svg>
-              </div>
-            )}
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="white"
+                strokeWidth="4"
+                fill="none"
+              />
+              <path
+                className="opacity-75"
+                fill="white"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              />
+            </svg>
           </div>
+        )}
+      </div>
 
-              {/* Mail */}
-              <a
-                href={`mailto:contact.enigmath@proton.me?subject=${encodeURIComponent(
-                activeEnigma.folderName === "Introduction"
-                  ? "Soumettre une énigme"
-                  : activeEnigma.title
-                )}&body=${
-                  activeEnigma.folderName === "Introduction"
-                    ? "Merci d'inclure votre .zip en pièce jointe de ce mail."
-                    : "Pour soumettre une question, veuillez suivre la même procédure que pour une nouvelle énigme, en incluant uniquement la question et sa réponse dans le fichier .tex (pas d'énoncé).%0A%0APour soumettre une réponse, ajoutez [X] en préfixe de l’objet du mail, où X correspond au numéro de la question, et suivez la même procédure, en incluant uniquement la réponse dans le fichier .tex (pas d'énoncé et 0 question).%0A%0ADans les deux cas, votre soumission sera évaluée et, si elle est recevable, incorporée à l'énigme actuelle (comme solution alternative dans le cas d’une soumission de réponse)."
-                }`}
-                className="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-2xl"
-                title={
-                  activeEnigma.folderName === "Introduction"
-                    ? "Soumettre une énigme"
-                    : "Soumettre une question/réponse"
-                }
-              >
-                ➤
-              </a>
+      {/* Mail button */}
+      <a
+        href={`mailto:contact.enigmath@proton.me?subject=${encodeURIComponent(
+          activeEnigma.folderName === "Introduction"
+            ? "Soumettre une énigme"
+            : activeEnigma.title
+        )}&body=${activeEnigma.folderName === "Introduction"
+          ? "Merci d'inclure votre .zip en pièce jointe de ce mail."
+          : "Instructions..."}`}
+        className="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded font-semibold transition text-2xl"
+        title={
+          activeEnigma.folderName === "Introduction"
+            ? "Soumettre une énigme"
+            : "Soumettre une question/réponse"
+        }
+      >
+        ➤
+      </a>
 
-              {/* Close */}
-              <button
-                onClick={closeEnigma}
-                className="w-12 h-12 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded text-gray-700 font-semibold transition text-2xl"
-                title="Fermer"
-              >
-                ✕
-              </button>
-            </div>
-            </div>
+      {/* Close button */}
+      <button
+        onClick={closeEnigma}
+        className="w-12 h-12 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded text-gray-700 font-semibold transition text-2xl"
+        title="Fermer"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+
   {/* Thin bottom band */}
-  <div className="px-4 py-1 text-xs text-gray-500 border-t border-gray-200">
+  <div className="w-full border-t border-gray-200 text-xs text-gray-500 px-4 py-1">
     Par {activeEnigma.author} — {activeEnigma.date}
   </div>
-          </div>
+</div>
+
 
           {/* Scrollable content */}
           <div className="pt-28 max-w-4xl mx-auto px-6 py-8 flex flex-col gap-6">
