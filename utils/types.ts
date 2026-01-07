@@ -9,6 +9,8 @@ export interface ImageProps {
   difficulty?: number;
   computer?: number; 
   title?: string;
+  author?: string;
+  date?: string;
   tags?: string[];
 }
 
