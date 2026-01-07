@@ -339,7 +339,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
           className="fixed inset-0 z-50 bg-white text-black overflow-y-auto"
         >
 {/* Header */}
-<div className="fixed top-0 left-0 right-0 z-50 bg-white">
+<div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-300">
   {/* Main header row */}
   <div className="flex justify-between items-center p-3 gap-3">
     <h2 className="text-lg font-semibold">{activeEnigma.title}</h2>
@@ -419,7 +419,7 @@ const Home: NextPage<{ images: ImageProps[] }> = ({ images }) => {
 
   {/* Thin bottom band */}
   {activeEnigma.folderName !== "Introduction" && (
-  <div className="w-full text-xs text-gray-500 px-3 py-0.5 bg-gray-300">
+  <div className="w-full text-xs text-gray-500 px-3 py-0 bg-gray-200">
     Par {activeEnigma.author} — {activeEnigma.date}
   </div>
   )}
