@@ -5,7 +5,7 @@ Vous avez été enfermés dans une prison formant un anneau parfait de $n$ cellu
 Dans chaque cellule se trouvent un interrupteur et une ampoule, mais le câblage a été manifestement conçu par un ingénieur fou.
 Si, à midi pile, l’interrupteur d'une cellule est en position "on", alors l’ampoule de la cellule voisine (dans le sens horaire) émet un bref flash. Sinon, la lampe reste éteinte.
 
-Afin d’empêcher toute forme de communication, chaque nuit à minuit, le gardien diffuse du gaz anesthésiant dans tout l’anneau, remet tous les interrupteurs sur "off", et réarrange les prisonniers comme bon lui semble. Mais il garde une règle immuable&nbsp;: une personne par cellule.
+Afin d’empêcher toute forme de communication, chaque nuit à minuit, le gardien diffuse du gaz anesthésiant dans tout l’anneau, remet tous les interrupteurs sur "off", et réarrange les prisonniers comme bon lui semble (une personne par cellule).
 
 Un jour, le gardien entre dans votre cellule et vous lance un défi. Pour gagner votre liberté — et celle de tous les autres — une seule règle&nbsp;:
 à n’importe quel moment, n’importe quel prisonnier peut crier "Nous sommes $n$ prisonniers&nbsp;!"
